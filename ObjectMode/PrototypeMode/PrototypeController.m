@@ -151,6 +151,7 @@
                 imh.image = image;
                 NSError * error;
                
+                
                 NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:imh.layer requiringSecureCoding:YES error:&err];
                 NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
                 [userDefault setObject:tempArchive forKey:@"image"];
