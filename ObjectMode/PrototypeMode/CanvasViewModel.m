@@ -7,7 +7,7 @@
 //
 
 #import "CanvasViewModel.h"
-#import "CanvasStyle.h"
+#import "CanvasBrushStyle.h"
 @interface CanvasViewModel()
 
 
@@ -15,17 +15,15 @@
 
 @implementation CanvasViewModel
 {
-    NSMutableArray * allPath;
-    CanvasStyle * _canvasStyle;
+    CanvasBrushStyle * _canvasStyle;
 }
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        allPath = [[NSMutableArray alloc]init];
-        _canvasStyle = [CanvasStyle new];
+        _canvasStyle = [CanvasBrushStyle new];
         _canvasStyle.lineColor = [UIColor blueColor];
-        _canvasStyle.lineWidth = 62.0;
+        _canvasStyle.lineWidth = 12.0;
         _canvasStyle.fillColor = [UIColor clearColor];
         _canvasStyle.lineJoin = kCALineJoinRound;
         _canvasStyle.lineCap = kCALineCapRound;
@@ -34,22 +32,7 @@
     return self;
 }
 
-- (void)buildCanvasStyle:(CanvasStyle *)canvasStyle{
-    _canvasStyle = [canvasStyle copy];
-}
-
-- (void)removePath{
-    if (allPath.count > 0) {
-        [allPath removeLastObject];
-    }
-}
-
-- (void)saveCanvasPath:(NSMutableArray *)points{
-    _canvasStyle.points = [points copy];
-    [allPath addObject:_canvasStyle];
-}
-
-- (CanvasStyle *)getCanvasLineStyle{
+- (CanvasBrushStyle *)getCanvasLineStyle{
     return _canvasStyle;
 }
 

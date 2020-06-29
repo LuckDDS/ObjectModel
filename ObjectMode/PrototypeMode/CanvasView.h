@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CanvasStyle;
+@class CanvasBrushStyle;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CanvasView : UIView<NSCopying>
-- (void)buildLineLayerWithStyle:(CanvasStyle *)style withPoint:(CGPoint)point;
+
+- (void)setBrushStyle:(CanvasBrushStyle *)style;
+
+- (void)setLineLayerWithPoint:(CGPoint)point;
 
 - (void)canvasLineWithPoint:(CGPoint)point;
 

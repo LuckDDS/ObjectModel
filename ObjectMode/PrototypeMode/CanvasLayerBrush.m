@@ -6,9 +6,9 @@
 //  Copyright © 2020 九天. All rights reserved.
 //
 
-#import "CanvasLayer.h"
+#import "CanvasLayerBrush.h"
 
-@implementation CanvasLayer
+@implementation CanvasLayerBrush
 
 - (void)layerWillDraw:(CALayer *)layer{
     NSLog(@"asdasdasd");

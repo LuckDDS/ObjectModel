@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CanvasLayer : CAShapeLayer<CALayerDelegate>
+@interface CanvasLayerBrush : CAShapeLayer<CALayerDelegate>
 
 @end
 

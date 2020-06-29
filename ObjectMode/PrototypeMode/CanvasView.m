@@ -8,15 +8,14 @@
 //
 
 #import "CanvasView.h"
-#import "CanvasLayer.h"
-#import "CanvasStyle.h"
+#import "CanvasLayerBrush.h"
+#import "CanvasBrushStyle.h"
 #import "CanvasBezierPath.h"
 @implementation CanvasView
 {
-    CanvasStyle * lineStyle;
+    CanvasBrushStyle * lineStyle;
     CAShapeLayer * lineLayer;
     CanvasBezierPath * bezierPath;
-    
     NSMutableArray * pointsArr;
     BOOL isEraser;
 }
@@ -35,15 +34,21 @@
         pointsArr = [NSMutableArray new];
     }
     return self;
+    
 }
 
-- (void)buildLineLayerWithStyle:(id)style withPoint:(CGPoint)point{
+- (void)setBrushStyle:(CanvasBrushStyle *)style{
+    
+    lineStyle = style;
+    
+}
+- (void)setLineLayerWithPoint:(CGPoint)point{
+    
     isEraser = NO;
     [pointsArr removeAllObjects];
     bezierPath = [CanvasBezierPath bezierPath];
     [pointsArr addObject:NSStringFromCGPoint(point)];
     bezierPath.lineJoinStyle = kCGLineJoinRound;
-    lineStyle = style;
     lineLayer = [CAShapeLayer layer];
     lineLayer.rasterizationScale = 2.0 * [UIScreen mainScreen].scale;
     lineLayer.shouldRasterize = YES;
@@ -59,31 +64,38 @@
 }
 
 - (void)canvasLineWithPoint:(CGPoint)point{
+    
     [pointsArr addObject:NSStringFromCGPoint(point)];
     lineLayer.path = [bezierPath buildBezierPathWith:pointsArr];
     NSLog(@"11");
 }
 
 - (void)buildEraserPath{
+    
     isEraser = YES;
     bezierPath = [CanvasBezierPath bezierPath];
     bezierPath.lineWidth = 15;
     bezierPath.lineCapStyle = kCGLineCapRound;
     bezierPath.lineJoinStyle = kCGLineCapRound;
     [pointsArr removeAllObjects];
+    
 }
 
 - (void)buildEraserPoints:(CGPoint)point{
+    
     [pointsArr addObject:NSStringFromCGPoint(point)];
     [bezierPath buildBezierPathWith:pointsArr];
+    
 }
 
 - (void)drawRect:(CGRect)rect{
+    
     if (isEraser) {
         [[UIColor clearColor] setStroke];
         [bezierPath strokeWithBlendMode:kCGBlendModeClear alpha:1.0];
         [bezierPath stroke];
     }
+    
 }
 
 - (UIImage *)buildImage{
@@ -93,6 +105,7 @@
     UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+    
 }
 
 -(CAShapeLayer *)getLayer{

@@ -6,14 +6,14 @@
 //  Copyright © 2020 九天. All rights reserved.
 //
 
-#import "CanvasStyle.h"
+#import "CanvasBrushStyle.h"
 
-@implementation CanvasStyle
+@implementation CanvasBrushStyle
 
 
 - (id)copyWithZone:(NSZone *)zone{
     
-    CanvasStyle * style = [[CanvasStyle allocWithZone:zone]init];
+    CanvasBrushStyle * style = [[CanvasBrushStyle allocWithZone:zone]init];
     style.lineColor = [self.lineColor copy];
     style.lineWidth = self.lineWidth;
     style.path = self.path;

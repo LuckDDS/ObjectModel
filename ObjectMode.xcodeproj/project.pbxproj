@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		455334EE24A232F500D1A29F /* CanvasLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 455334ED24A232F500D1A29F /* CanvasLayer.m */; };
+		455334EE24A232F500D1A29F /* CanvasLayerBrush.m in Sources */ = {isa = PBXBuildFile; fileRef = 455334ED24A232F500D1A29F /* CanvasLayerBrush.m */; };
 		45A0486E249F435000147D24 /* PrototypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0486D249F435000147D24 /* PrototypeController.m */; };
 		45A04872249F47D900147D24 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A04871249F47D900147D24 /* CanvasView.m */; };
 		45A04875249F4BF300147D24 /* CanvasViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A04874249F4BF300147D24 /* CanvasViewModel.m */; };
-		45A04878249F4C6E00147D24 /* CanvasStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A04877249F4C6E00147D24 /* CanvasStyle.m */; };
+		45A04878249F4C6E00147D24 /* CanvasBrushStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A04877249F4C6E00147D24 /* CanvasBrushStyle.m */; };
 		45A0487D249F82F900147D24 /* objc.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 45A0487C249F82F900147D24 /* objc.jpeg */; };
 		45D3F9F324A061000004CF1E /* CGContextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D3F9F224A061000004CF1E /* CGContextController.m */; };
 		45D3F9F624A0617D0004CF1E /* CGContextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D3F9F524A0617D0004CF1E /* CGContextView.m */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		455334EC24A232F500D1A29F /* CanvasLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasLayer.h; sourceTree = "<group>"; };
-		455334ED24A232F500D1A29F /* CanvasLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasLayer.m; sourceTree = "<group>"; };
+		455334EC24A232F500D1A29F /* CanvasLayerBrush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasLayerBrush.h; sourceTree = "<group>"; };
+		455334ED24A232F500D1A29F /* CanvasLayerBrush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasLayerBrush.m; sourceTree = "<group>"; };
 		45A0486C249F435000147D24 /* PrototypeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrototypeController.h; sourceTree = "<group>"; };
 		45A0486D249F435000147D24 /* PrototypeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrototypeController.m; sourceTree = "<group>"; };
 		45A0486F249F43A900147D24 /* ControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerProtocol.h; sourceTree = "<group>"; };
@@ -47,8 +47,8 @@
 		45A04871249F47D900147D24 /* CanvasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		45A04873249F4BF300147D24 /* CanvasViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewModel.h; sourceTree = "<group>"; };
 		45A04874249F4BF300147D24 /* CanvasViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasViewModel.m; sourceTree = "<group>"; };
-		45A04876249F4C6E00147D24 /* CanvasStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasStyle.h; sourceTree = "<group>"; };
-		45A04877249F4C6E00147D24 /* CanvasStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasStyle.m; sourceTree = "<group>"; };
+		45A04876249F4C6E00147D24 /* CanvasBrushStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasBrushStyle.h; sourceTree = "<group>"; };
+		45A04877249F4C6E00147D24 /* CanvasBrushStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasBrushStyle.m; sourceTree = "<group>"; };
 		45A0487C249F82F900147D24 /* objc.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = objc.jpeg; path = ObjectMode/objc.jpeg; sourceTree = SOURCE_ROOT; };
 		45D3F9F124A061000004CF1E /* CGContextController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextController.h; sourceTree = "<group>"; };
 		45D3F9F224A061000004CF1E /* CGContextController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextController.m; sourceTree = "<group>"; };
@@ -99,16 +99,16 @@
 				45A0486C249F435000147D24 /* PrototypeController.h */,
 				45A0486D249F435000147D24 /* PrototypeController.m */,
 				45A04873249F4BF300147D24 /* CanvasViewModel.h */,
-				45A0487C249F82F900147D24 /* objc.jpeg */,
 				45A04874249F4BF300147D24 /* CanvasViewModel.m */,
-				45A04876249F4C6E00147D24 /* CanvasStyle.h */,
-				45A04877249F4C6E00147D24 /* CanvasStyle.m */,
+				45A04876249F4C6E00147D24 /* CanvasBrushStyle.h */,
+				45A04877249F4C6E00147D24 /* CanvasBrushStyle.m */,
 				45A04870249F47D900147D24 /* CanvasView.h */,
 				45A04871249F47D900147D24 /* CanvasView.m */,
 				45E6377B24A323ED008149A1 /* CanvasBezierPath.h */,
 				45E6377C24A323ED008149A1 /* CanvasBezierPath.m */,
-				455334EC24A232F500D1A29F /* CanvasLayer.h */,
-				455334ED24A232F500D1A29F /* CanvasLayer.m */,
+				455334EC24A232F500D1A29F /* CanvasLayerBrush.h */,
+				455334ED24A232F500D1A29F /* CanvasLayerBrush.m */,
+				45A0487C249F82F900147D24 /* objc.jpeg */,
 			);
 			path = PrototypeMode;
 			sourceTree = "<group>";
@@ -282,9 +282,9 @@
 				45E5ABC5249E1598005FDBF9 /* main.m in Sources */,
 				45A04875249F4BF300147D24 /* CanvasViewModel.m in Sources */,
 				45A04872249F47D900147D24 /* CanvasView.m in Sources */,
-				45A04878249F4C6E00147D24 /* CanvasStyle.m in Sources */,
+				45A04878249F4C6E00147D24 /* CanvasBrushStyle.m in Sources */,
 				45E5ABB7249E1594005FDBF9 /* SceneDelegate.m in Sources */,
-				455334EE24A232F500D1A29F /* CanvasLayer.m in Sources */,
+				455334EE24A232F500D1A29F /* CanvasLayerBrush.m in Sources */,
 				45E6377D24A323ED008149A1 /* CanvasBezierPath.m in Sources */,
 				45E5ABDB249E1ADE005FDBF9 /* HomeCollectionViewCell.m in Sources */,
 				45D3F9F324A061000004CF1E /* CGContextController.m in Sources */,

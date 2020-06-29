@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CanvasBezierPath : UIBezierPath
 
 - (CGPathRef)buildBezierPathWith:(NSMutableArray *)points;
+
 @end
 
 NS_ASSUME_NONNULL_END

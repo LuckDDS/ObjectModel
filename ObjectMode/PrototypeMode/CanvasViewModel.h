@@ -7,22 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CanvasStyle;
+@class CanvasBrushStyle;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CanvasViewModel : UIView
 
-/// 构建线条样式
-/// @param canvasStyle 线条样式
-- (void)buildCanvasStyle:(CanvasStyle *)canvasStyle;
 
-/// 一条path绘制结束
-- (void)saveCanvasPath:(NSMutableArray *)points;
-
-/// 移除path
-- (void)removePath;
-
-- (CanvasStyle*)getCanvasLineStyle;
+/// 获取画笔样式
+- (CanvasBrushStyle*)getCanvasLineStyle;
 @end
 
 NS_ASSUME_NONNULL_END
