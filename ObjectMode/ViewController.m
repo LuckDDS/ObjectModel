@@ -10,11 +10,13 @@
 #import "HomeCollectionViewCell.h"
 #import "PrototypeController.h"
 #import "CGContextController.h"
-
+#import "DSRunTime.h"
+#import <objc/runtime.h>
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong)UICollectionView * mCollectionView;
 @property (nonatomic, strong)UICollectionViewFlowLayout * mCollectionViewLayout;
 @property (nonatomic, strong)NSMutableArray * listData;
+@property (nonatomic, strong)NSString * kvo;
 
 @end
 
@@ -25,6 +27,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self buildData];
     [self buildCollectionView];
+    _kvo = @"旧";
+    NSLog(@"%p",self.kvo);
+
+    [self addObserver];
+    
+    DSRunTime * ds = [[DSRunTime alloc]init];
+    Class s = object_getClass(ds);
+    unsigned int count;
+    Ivar *list = class_copyIvarList(s, &count);
+//    [ds runTimeTest];
     // Do any additional setup after loading the view.
 }
 
@@ -42,11 +54,13 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController * controller;
     if (indexPath.row == 0) {
-        controller = [[PrototypeController alloc]init];
+//        controller = [[PrototypeController alloc]init];
+        self.kvo = @"新";
+        NSLog(@"%p",self.kvo);
     }else if (indexPath.row == 1){
-        controller = [[CGContextController alloc]init];
+//        controller = [[CGContextController alloc]init];
     }
-    [self.navigationController pushViewController:controller animated:YES];
+//    [self.navigationController pushViewController:controller animated:YES];
     
 }
 
@@ -92,4 +106,41 @@
     return _listData;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark 测试代码
+
+//KVO
+- (void)addObserver{
+//    [self addObserver:self forKeyPath:@"kvo" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+//    [self addObserver:self forKeyPath:@"listData" options:NSKeyValueObservingOptionInitial context:nil];
+    [self addObserver:self forKeyPath:@"self" options:NSKeyValueObservingOptionInitial context:nil];
+//    [self.listData mutableArrayValueForKey:@""];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    NSLog(@"%@",change);
+}
+
++(NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key{
+    NSSet * keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    if ([key isEqualToString:@"self"]) {
+        NSArray * aggectingKeys = @[@"kvo",@"listData"];
+        keyPaths = [keyPaths setByAddingObjectsFromArray:aggectingKeys];
+    }
+    return keyPaths;
+}
 @end
+    
+    

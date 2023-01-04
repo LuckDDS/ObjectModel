@@ -25,6 +25,7 @@
 		45E5ABCF249E1598005FDBF9 /* ObjectModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E5ABCE249E1598005FDBF9 /* ObjectModeTests.m */; };
 		45E5ABDB249E1ADE005FDBF9 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E5ABDA249E1ADE005FDBF9 /* HomeCollectionViewCell.m */; };
 		45E6377D24A323ED008149A1 /* CanvasBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E6377C24A323ED008149A1 /* CanvasBezierPath.m */; };
+		45F6D47E27312DA800289982 /* DSRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F6D47D27312DA800289982 /* DSRunTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		45E5ABDA249E1ADE005FDBF9 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		45E6377B24A323ED008149A1 /* CanvasBezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasBezierPath.h; sourceTree = "<group>"; };
 		45E6377C24A323ED008149A1 /* CanvasBezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasBezierPath.m; sourceTree = "<group>"; };
+		45F6D47C27312DA800289982 /* DSRunTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRunTime.h; sourceTree = "<group>"; };
+		45F6D47D27312DA800289982 /* DSRunTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRunTime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 				45E5ABB9249E1594005FDBF9 /* ViewController.m */,
 				45E5ABD9249E1ADE005FDBF9 /* HomeCollectionViewCell.h */,
 				45E5ABDA249E1ADE005FDBF9 /* HomeCollectionViewCell.m */,
+				45F6D47C27312DA800289982 /* DSRunTime.h */,
+				45F6D47D27312DA800289982 /* DSRunTime.m */,
 				45A0486F249F43A900147D24 /* ControllerProtocol.h */,
 				45D3F9F024A060E30004CF1E /* CGContext */,
 				45A0486B249F431A00147D24 /* PrototypeMode */,
@@ -282,6 +287,7 @@
 				45E5ABC5249E1598005FDBF9 /* main.m in Sources */,
 				45A04875249F4BF300147D24 /* CanvasViewModel.m in Sources */,
 				45A04872249F47D900147D24 /* CanvasView.m in Sources */,
+				45F6D47E27312DA800289982 /* DSRunTime.m in Sources */,
 				45A04878249F4C6E00147D24 /* CanvasBrushStyle.m in Sources */,
 				45E5ABB7249E1594005FDBF9 /* SceneDelegate.m in Sources */,
 				455334EE24A232F500D1A29F /* CanvasLayerBrush.m in Sources */,
@@ -444,13 +450,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7MHLKJH3J;
+				DEVELOPMENT_TEAM = 7Z58V3Y726;
 				INFOPLIST_FILE = ObjectMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "--.ObjectMode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.read61.ios.razkt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,13 +467,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7MHLKJH3J;
+				DEVELOPMENT_TEAM = 7Z58V3Y726;
 				INFOPLIST_FILE = ObjectMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "--.ObjectMode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.read61.ios.razkt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
